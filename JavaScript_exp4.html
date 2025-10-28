@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #0066cc;
+    }
+    .section {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      background: #fff;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    input {
+      padding: 6px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Concepts</h1>
+
+  <!-- Variables & Operators -->
+  <div class="section">
+    <h2>1️⃣ Variables & Operators</h2>
+    <p id="result1"></p>
+    <button onclick="variablesDemo()">Run Code</button>
+  </div>
+
+  <!-- Loops Example -->
+  <div class="section">
+    <h2>2️⃣ Loop Example (1 to 5)</h2>
+    <p id="result2"></p>
+    <button onclick="loopDemo()">Show Numbers</button>
+  </div>
+
+  <!-- Function Example -->
+  <div class="section">
+    <h2>3️⃣ Function Example (Sum of 2 Numbers)</h2>
+    <input type="number" id="num1" placeholder="Enter number 1">
+    <input type="number" id="num2" placeholder="Enter number 2">
+    <button onclick="findSum()">Find Sum</button>
+    <p id="sumResult"></p>
+  </div>
+
+  <!-- Event Handling Example -->
+  <div class="section">
+    <h2>4️⃣ Event Handling Example</h2>
+    <p>Hover the mouse over this box:</p>
+    <div id="hoverBox" style="width:200px;height:100px;border:2px solid #007bff;background:#e6f0ff;text-align:center;line-height:100px;">
+      Hover Me!
+    </div>
+    <p id="hoverResult"></p>
+  </div>
+
+  <!-- Form Validation Example -->
+  <div class="section">
+    <h2>5️⃣ Form Validation</h2>
+    <form onsubmit="return validateForm()">
+      <label>Name:</label>
+      <input type="text" id="name"><br>
+      <label>Email:</label>
+      <input type="email" id="email"><br>
+      <label>Password:</label>
+      <input type="password" id="password"><br>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formMessage" style="color:red;"></p>
+  </div>
+
+  <script>
+    // 1️⃣ Variables & Operators
+    function variablesDemo() {
+      let a = 10, b = 5;
+      let sum = a + b;
+      let product = a * b;
+      document.getElementById("result1").innerHTML =
+        "a = " + a + ", b = " + b + "<br>Sum = " + sum + "<br>Product = " + product;
+    }
+
+    // 2️⃣ Loop Example
+    function loopDemo() {
+      let output = "";
+      for (let i = 1; i <= 5; i++) {
+        output += i + " ";
+      }
+      document.getElementById("result2").innerHTML = "Numbers: " + output;
+    }
+
+    // 3️⃣ Function Example
+    function findSum() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById("sumResult").innerHTML = "Please enter valid numbers!";
+      } else {
+        let sum = n1 + n2;
+        document.getElementById("sumResult").innerHTML = "Sum = " + sum;
+      }
+    }
+
+    // 4️⃣ Event Handling Example
+    document.getElementById("hoverBox").addEventListener("mouseover", function() {
+      document.getElementById("hoverResult").innerHTML = "Mouse entered the box!";
+    });
+    document.getElementById("hoverBox").addEventListener("mouseout", function() {
+      document.getElementById("hoverResult").innerHTML = "Mouse left the box!";
+    });
+
+    // 5️⃣ Form Validation Example
+    function validateForm() {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+
+      if (name === "" || email === "" || password === "") {
+        document.getElementById("formMessage").innerHTML = "⚠️ All fields are required!";
+        return false;
+      } else if (password.length < 6) {
+        document.getElementById("formMessage").innerHTML = "⚠️ Password must be at least 6 characters.";
+        return false;
+      } else {
+        alert("✅ Form Submitted Successfully!");
+        return true;
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment 2 - CSS3 Styling</title>
+    <style>
+        /* General styling */
+        body {
+            background-color: #f4f9ff;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 40px;
+        }
+
+        /* Heading style */
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            text-shadow: 2px 2px 4px #aaa;
+        }
+
+        /* Paragraph style */
+        .intro {
+            font-size: 18px;
+            color: #444;
+            background-color: #d9ebff;
+            padding: 10px;
+            border-left: 4px solid #0056b3;
+        }
+
+        /* Table styling */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0073e6;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #e6f2ff;
+        }
+
+        /* List styling */
+        .styled-list li {
+            list-style-type: square;
+            padding: 5px;
+        }
+        .styled-list li:hover {
+            color: #0073e6;
+            font-weight: bold;
+        }
+
+        /* Pseudo-class example */
+        a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #ff6600;
+        }
+
+        /* Pseudo-element example */
+        p::first-letter {
+            font-size: 200%;
+            color: #ff6600;
+        }
+
+        /* Box/Card Example */
+        .card {
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 8px #aaa;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 30px auto;
+            width: 50%;
+            background-color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to CSS3 Styling Example</h1>
+
+    <p class="intro">This paragraph demonstrates external CSS styling, colors, and fonts.</p>
+
+    <h2>Table Example</h2>
+    <table>
+        <tr>
+            <th>Language</th>
+            <th>Use</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>Structure</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>Styling</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>Logic</td>
+        </tr>
+    </table>
+
+    <h2>List Example</h2>
+    <ul class="styled-list">
+        <li>Frontend</li>
+        <li>Backend</li>
+        <li>Database</li>
+    </ul>
+
+    <a href="#">Hover Over This Link</a>
+
+    <div class="card">
+        <h3>CSS3 Box Example</h3>
+        <p>This box has shadow, border radius, and padding.</p>
+    </div>
+
+    <footer>
+        <p>Created by ROCK Student © 2025</p>
+    </footer>
+
+</body>
+</html>
